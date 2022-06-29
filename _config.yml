@@ -20,6 +20,7 @@ navigation:                # accepts {file, title, url, icon, sidebaricon}
   - {file: "README.md", title: "about me"}
   - {file: "blog.md", title: "blog" }
   - {file: "projects.html", title: "projects" }
+  - {file: "timeline.md", title: "timeline"}
 
 external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
   - {title: Mail, icon: envelope, url: "mailto:craiggoble@rocketmortgage.com"}
