@@ -1,49 +1,44 @@
----
-layout: timeline 
----
-
-<article>
-  {% include meta.html post=page %}
-  {{ content }}
-  {% if page.comments != false and site.comments.isso or site.comments.disqus %}
-    <hr>
-    {% if site.comments.isso_domain %}<div id="isso-thread"></div>{% endif %}
-    {% if site.comments.disqus_shortname %}<div id="disqus_thread"></div>{% endif %}
-    <noscript>Please enable JavaScript to view comments.</noscript>
-  {% endif %}
-</article>
-
-<div class="container">
-  <div class="timeline">
-    <ul>
-      <li>
-        <div class="timeline-content">
-          <h3 class="date">20th may, 2010</h3>
-          <h1>Heading 1</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur tempora ab laudantium voluptatibus aut eos placeat laborum, quibusdam exercitationem labore.</p>
-        </div>
-      </li>
-      <li>
-        <div class="timeline-content">
-          <h3 class="date">20th may, 2010</h3>
-          <h1>Heading 2</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur tempora ab laudantium voluptatibus aut eos placeat laborum, quibusdam exercitationem labore.</p>
-        </div>
-      </li>
-      <li>
-        <div class="timeline-content">
-          <h3 class="date">20th may, 2010</h3>
-          <h1>Heading 3</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur tempora ab laudantium voluptatibus aut eos placeat laborum, quibusdam exercitationem labore.</p>
-        </div>
-      </li>
-      <li>
-        <div class="timeline-content">
-          <h3 class="date">20th may, 2010</h3>
-          <h1>Heading 4</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur tempora ab laudantium voluptatibus aut eos placeat laborum, quibusdam exercitationem labore.</p>
-        </div>
-      </li>
-    </ul>
-  </div>
-</div>
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+  </head>
+  <body>
+	<div class="container">
+	  <div class="timeline">
+		<ul>
+		  <li>
+			<div class="timeline-content">
+			  <h3 class="date">20th may, 2010</h3>
+			  <h1>Heading 1</h1>
+			  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur tempora ab laudantium voluptatibus aut eos placeat laborum, quibusdam exercitationem labore.</p>
+			</div>
+		  </li>
+		  <li>
+			<div class="timeline-content">
+			  <h3 class="date">20th may, 2010</h3>
+			  <h1>Heading 2</h1>
+			  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur tempora ab laudantium voluptatibus aut eos placeat laborum, quibusdam exercitationem labore.</p>
+			</div>
+		  </li>
+		  <li>
+			<div class="timeline-content">
+			  <h3 class="date">20th may, 2010</h3>
+			  <h1>Heading 3</h1>
+			  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur tempora ab laudantium voluptatibus aut eos placeat laborum, quibusdam exercitationem labore.</p>
+			</div>
+		  </li>
+		  <li>
+			<div class="timeline-content">
+			  <h3 class="date">20th may, 2010</h3>
+			  <h1>Heading 4</h1>
+			  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur tempora ab laudantium voluptatibus aut eos placeat laborum, quibusdam exercitationem labore.</p>
+			</div>
+		  </li>
+		</ul>
+	  </div>
+	</div>
+  </body>
+</html>
