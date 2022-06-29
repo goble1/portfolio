@@ -1,6 +1,7 @@
 --- 
 layout: page
-title: ""
+title: "Projects Title"
+custom_css: timeline
 ---
 
-about me 
+projects body
