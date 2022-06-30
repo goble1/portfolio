@@ -1,4 +1,4 @@
-##2022
+## 2022
 
 1. onboarding full 5+ hours of lectures on  Databases, S3, Dynamodb, and Identity and Access Management
 1. Workout options deep dive at brain dump
@@ -8,9 +8,9 @@
 1. Network troubleshooting, vpc endpoint, vpc flow logs, security groups, nacls at brain dump
 1. Presented RDS best practices at team brain dump
 
-##2021
+## 2021
 
-1. Presented on regex at team brain dump
+8. Presented on regex at team brain dump
 1. Presented cost savings for RDS, Lambda, S3
 1. Presented on AWS architecture problems with diagrams, which has led to our default interview question
 1. Presented and documented on RDS migration with zero down time
@@ -21,7 +21,7 @@
 1. Presented best practices for Lambdas
 1. Presented Studying for AWS Certifications
 
-##2020
+## 2020
 
 1. byasic x-ray queries api gateway errors
 1. Making Grafana and Splunk Alerts
@@ -31,7 +31,7 @@
 1. AMP Continuity: a virtual team that supports servers, database and the Openedge language
 1. AMP Coding Standards: regulate AMP Coding standards.
  
-##2019
+## 2019
 
 1. Progress OO mentors: Help Team members transition to Object Oriented Programming
 1. Buzz Light Year: help optimize AMP and increase performance by identifying issues
