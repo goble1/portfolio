@@ -1,3 +1,8 @@
+---
+layout: page
+title: "Presentations"
+---
+
 ## 2022
 
 1. onboarding full 5+ hours of lectures on  Databases, S3, Dynamodb, and Identity and Access Management
