@@ -3,6 +3,8 @@ layout: page
 title: "Presentations"
 ---
 
+I always prioritized presenting and knowledge shares. 
+
 ## 2022
 
 1. Onboarding: full 5+ hours of lectures on  Databases, S3, Dynamodb, and Identity and Access Management
