@@ -19,6 +19,14 @@ of dollars, by creating our SLI stratigy to track our progress, and by making hu
 <img src="pictures/sysops-transparent.png"     alt="drawing" width="200px" height="200px"/>
 <img src="pictures/lpic-transparent.png"       alt="drawing" width="100pk" height="100px"/>
 
+<img src="pictures/db-transparent.png"         />
+<img src="pictures/dev-transparent.png"        />
+<img src="pictures/networking-transparent.png" />
+<img src="pictures/saa-transparent.png"        />
+<img src="pictures/sap-transparent.png"        />
+<img src="pictures/sysops-transparent.png"     />
+<img src="pictures/lpic-transparent.png"       />
+
 
 1. Jun, 2022 AWS Certified Advanced Networking – Specialty
 1. Mar, 2022 AWS Certified Database – Specialty
