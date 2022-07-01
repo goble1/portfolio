@@ -16,12 +16,12 @@ minimal: false             # use a dark header
 # Menu
 
 navigation:                # accepts {file, title, url, icon, sidebaricon}
-  - {file: "index.md", title: "<div>Home</div>"}
-  - {file: "README.md", title: "<div>about me</div>"}
+  - {file: "index.md", title: "Home"}
+  - {file: "README.md", title: "about me"}
     #  - {file: "blog.md", title: "blog" }
-  - {file: "docsAndPresentations.md", title: "<div>presentations</div>" }
-  - {file: "projects.md", title: "<div>projects</div>" }
-  - {file: "timeline.md", title: "<div>time <br> line</div>"}
+  - {file: "docsAndPresentations.md", title: "presentations" }
+  - {file: "projects.md", title: "projects" }
+  - {file: "timeline.md", title: "<p>time <br> line</p>"}
 
 external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
   - {title: Mail, icon: envelope, url: "mailto:craiggoble@rocketmortgage.com"}
