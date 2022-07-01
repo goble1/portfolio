@@ -11,6 +11,13 @@ of dollars, by creating our SLI stratigy to track our progress, and by making hu
 
 
 ## Certifications and Awards
+<img src="db-transparent.png" alt="drawing" width="200"/>
+<img src="dev-transparent.png" alt="drawing" width="200"/>
+<img src="networking-transparent.png" alt="drawing" width="200"/>
+<img src="saa-transparent.png" alt="drawing" width="200"/>
+<img src="sap-transparent.png" alt="drawing" width="200"/>
+<img src="sysops-transparent.png" alt="drawing" width="200"/>
+
 
 1. Jun, 2022 AWS Certified Advanced Networking – Specialty
 1. Mar, 2022 AWS Certified Database – Specialty
