@@ -3,6 +3,8 @@ layout: page
 title: "Projects"
 ---
 
+These do not encompass all the work ive done. I have done many small projects, done research tasks, and general support my whole career. These are the tasks that have had the greatest impact and are the most noteworthy. 
+
 ## 2022 
 
 -  **SLI for Servicing** The main job of SRE is availabitly of our applications, to do this we need to measure availably. The goal of setting up SLI for our current and future apps with repeatable solutions.
