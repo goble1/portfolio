@@ -16,7 +16,7 @@ of dollars, by creating our SLI stratigy to track our progress, and by making hu
 <img src="pictures/networking-transparent.png" alt="drawing" width="100px"/>
 <img src="pictures/saa-transparent.png" alt="drawing" width="100px"/>
 <img src="pictures/sap-transparent.png" alt="drawing" width="100px"/>
-<img src="pictures/sysops-transparent.png" alt="drawing" widtr="100px"/>
+<img src="pictures/sysops-transparent.png" alt="drawing" width="100px"/>
 <img src="pictures/lpic-transparent.png" alt="drawing" width="100pk"/>
 
 
