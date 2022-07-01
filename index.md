@@ -11,16 +11,13 @@ of dollars, by creating our SLI stratigy to track our progress, and by making hu
 
 
 ## Certifications and Awards
-![first](../pictures/db-transparent.png)
-![second](/pictures/db-transparent.png)
-![third](pictures/db-transparent.png)
 <img src="pictures/db-transparent.png" alt="drawing" width="200"/>
-<img src="/pictures/dev-transparent.png" alt="drawing" width="200"/>
-<img src="/pictures/networking-transparent.png" alt="drawing" width="200"/>
-<img src="/pictures/saa-transparent.png" alt="drawing" width="200"/>
-<img src="/pictures/sap-transparent.png" alt="drawing" width="200"/>
-<img src="/pictures/sysops-transparent.png" alt="drawing" width="200"/>
-<img src="/pictures/lpic-transparent.png" alt="drawing" width="200"/>
+<img src="pictures/dev-transparent.png" alt="drawing" width="200"/>
+<img src="pictures/networking-transparent.png" alt="drawing" width="200"/>
+<img src="pictures/saa-transparent.png" alt="drawing" width="200"/>
+<img src="pictures/sap-transparent.png" alt="drawing" width="200"/>
+<img src="pictures/sysops-transparent.png" alt="drawing" width="200"/>
+<img src="pictures/lpic-transparent.png" alt="drawing" width="200"/>
 
 
 1. Jun, 2022 AWS Certified Advanced Networking – Specialty
