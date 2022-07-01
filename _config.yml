@@ -21,7 +21,7 @@ navigation:                # accepts {file, title, url, icon, sidebaricon}
     #  - {file: "blog.md", title: "blog" }
   - {file: "docsAndPresentations.md", title: "presentations" }
   - {file: "projects.md", title: "projects" }
-  - {file: "timeline.md", title: "<p>time <br> line</p>"}
+  - {file: "timeline.md", title: "time \r line"}
 
 external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
   - {title: Mail, icon: envelope, url: "mailto:craiggoble@rocketmortgage.com"}
