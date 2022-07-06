@@ -8,12 +8,12 @@ I always prioritized presenting and knowledge shares.
 ## 2022
 
 1. Onboarding: full 5+ hours of lectures on  Databases, S3, Dynamodb, and Identity and Access Management
-1. Brain dump: Workout options deep dive at brain dump
+1. Brain dump: Workout options deep dive 
 1. Lunch and learn: AWS CLI 
 1. COP: cost saving 
-1. Brain dump: How to use Dynatrace at brain dump
-1. Brain dump: Network troubleshooting, vpc endpoint, vpc flow logs, security groups, nacls at brain dump
-1. Brain dump: Presented RDS best practices at team brain dump
+1. Brain dump: How to use Dynatrace
+1. Brain dump: Network troubleshooting, vpc endpoint, vpc flow logs, security groups, nacls 
+1. Brain dump: Presented RDS best practices 
 
 ## 2021
 
