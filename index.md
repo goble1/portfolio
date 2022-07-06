@@ -3,11 +3,11 @@ layout: page
 title: ""
 ---
 
-“Any one can build a bridge that stands, but it takes an engineer to build a bridge that barely stands.”
+“Anyone can build a bridge that stands, but it takes an engineer to build a bridge that barely stands.”
 ― Unknown
 
 I'm dedicated to the statability and availabily of our systems and our applications. Since joining Servicing I have made real impact by: being a major part of both RMS and DLS migrations, by reducing cost in our AWS accounts in thousads 
-of dollars, by creating our SLI stratigy to track our progress, and by making huge improvements to our alerting. As an SRE its important to set stababily goals and work towards that. 
+of dollars, by creating our SLI stratigy to track our progress, and by making huge improvements to our alerting.  
 
 
 ## Certifications and Awards
