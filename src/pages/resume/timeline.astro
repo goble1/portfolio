@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const timeline = [
+  { year: "2022–Present", role: "Site Reliability Engineer", org: "Rocket Mortgage" },
+  { year: "2016–2022", role: "Various Engineering Roles", org: "Rocket Mortgage" },
+  { year: "2007–2012", role: "Sergeant", org: "United States Marine Corps" },
+  { year: "2012–2016", role: "BS in Computer Engineering", org: "University of the Pacific" },
+];
+---
+
+<BaseLayout title="Timeline">
+  <h1>Career & Education Timeline</h1>
+  <ul>
+    {timeline.map((item) => (
+      <li><strong>{item.year}</strong>: {item.role} @ {item.org}</li>
+    ))}
+  </ul>
+
+  <p><a href="/resume">← Back to Resume</a></p>
+</BaseLayout>

@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import {
+  contact,
+  education,
+  experience,
+  certifications,
+  awards,
+  skills
+} from '../../data/resumeData.js';
+---
+
+<BaseLayout title="Resume">
+  <section class="max-w-4xl mx-auto px-4 py-12 space-y-10">
+    <!-- Header -->
+    <div class="text-center">
+      <h1 class="text-4xl font-bold text-blue-600 dark:text-blue-400">Craig Goble</h1>
+      <p class="text-gray-700 dark:text-gray-300 mt-2">
+        <a href={`mailto:${contact.email}`} class="underline text-blue-500 dark:text-blue-400">{contact.email}</a> <br />
+        <a href={contact.website} class="text-blue-500 dark:text-blue-400">{contact.website}</a><br />
+        <a href={contact.linkedin} class="text-blue-500 dark:text-blue-400">LinkedIn</a> •
+        <a href={contact.github} class="text-blue-500 dark:text-blue-400">GitHub</a>
+      </p>
+    </div>
+
+    <!-- Education -->
+    <section>
+      <h2 class="text-2xl font-semibold border-b border-gray-300 dark:border-gray-600 mb-2">Education</h2>
+      {education.map((edu) => (
+        <div class="mb-4">
+          <strong>{edu.degree}</strong>, {edu.school} ({edu.date})<br />
+          <small class="text-gray-600 dark:text-gray-400">{edu.details}</small>
+        </div>
+      ))}
+    </section>
+
+    <!-- Experience -->
+    <section>
+      <h2 class="text-2xl font-semibold border-b border-gray-300 dark:border-gray-600 mb-2">Experience</h2>
+      {experience.map((job) => (
+        <div class="mb-6">
+          <h3 class="text-lg font-bold">{job.title} @ {job.company}</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 italic">{job.date} – {job.location}</p>
+          <ul class="list-disc list-inside mt-2 space-y-1 text-gray-800 dark:text-gray-100">
+            {job.bullets.map((line) => <li>{line}</li>)}
+          </ul>
+        </div>
+      ))}
+    </section>
+
+    <!-- Certifications -->
+    <section>
+      <h2 class="text-2xl font-semibold border-b border-gray-300 dark:border-gray-600 mb-2">Certifications</h2>
+      <ul class="list-disc list-inside text-gray-800 dark:text-gray-100">
+        {certifications.map((c) => <li>{c}</li>)}
+      </ul>
+    </section>
+
+    <!-- Awards -->
+    <section>
+      <h2 class="text-2xl font-semibold border-b border-gray-300 dark:border-gray-600 mb-2">Awards</h2>
+      <ul class="list-disc list-inside text-gray-800 dark:text-gray-100">
+        {awards.map((a) => <li>{a}</li>)}
+      </ul>
+    </section>
+
+    <!-- Skills -->
+    <section>
+      <h2 class="text-2xl font-semibold border-b border-gray-300 dark:border-gray-600 mb-2">Skills</h2>
+      <p><strong>Languages:</strong> {skills.languages.join(', ')}</p>
+      <p><strong>Tools:</strong> {skills.tools.join(', ')}</p>
+    </section>
+  </section>
+</BaseLayout>
+
