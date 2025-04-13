@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<article>
+  <header><h1><a href="{{ page.url | relative_url }}">{{ page.title }}</a></h1>
+	{% if page.custom_css %}
+    {% for stylesheet in page.custom_css %}
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/{{ stylesheet }}.css">
+    {% endfor %}
+	{% endif %}
+  </header>
+  {{ content }}
+</article>

@@ -1,0 +1,32 @@
+--- 
+layout: page
+title: ""
+---
+
+I’m dedicated to the stability and availability of our systems and our applications. Since joining Servicing I have made a real impact by: being a major part of both RMS and DLS migrations, 
+by reducing cost in our AWS accounts by thousands of dollars, by creating our SLI strategy to track our progress, and by making huge improvements to our alerting.
+
+
+## Certifications and Awards
+<img src="pictures/db-transparent.png"         width="100px"/>
+<img src="pictures/networking-transparent.png" width="100px"/>
+<img src="pictures/sap-transparent.png"        width="100px"/>
+<img src="pictures/sysops-transparent.png"     width="100px"/>
+<img src="pictures/dev-transparent.png"        width="100px"/>
+<img src="pictures/saa-transparent.png"        width="100px"/>
+<img src="pictures/lpic-transparent.png"       width="200px"/>
+
+
+1. Jun, 2022 AWS Certified Advanced Networking – Specialty
+1. Mar, 2022 AWS Certified Database – Specialty
+1. Sep, 2021 AWS Certified Solutions Architect – Professional
+1. Apr, 2021 AWS Certified SysOps Administrator - Associate
+1. Dec, 2020 AWS Certified Developer - Associate
+1. Dec, 2019 AWS Certified Solutions Architect - Associate
+1. Jul, 2019 Certified Linux Administrator (LPIC-1) 2 exam
+1. Nov, 2019 Certified Linux Administrator (LPIC-1) 1 exam
+1. Oct, 2019 Rock Honors Best Execution winner
+2. Oct, 2018 Rock Honors Best Execution nominated
+3. Nov, 2018 Sys Ops Team member of the month (Last one before the award was retired)
+4. Dec, 2017 Sys Ops Team member of the month (First time award was given)
+
