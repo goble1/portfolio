@@ -1,0 +1,27 @@
+{
+  "name": "portfolio",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && node scripts/postbuild-fixes.js",
+    "preview": "astro preview",
+    "astro": "astro",
+    "deploy": "npm run build && git add docs && git commit -m 'deploy' && git push origin main"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/markdown-remark": "^6.3.1",
+    "@astrojs/tailwind": "^6.0.2",
+    "astro": "^5.6.1",
+    "lucide-static": "^0.487.0",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.16",
+    "autoprefixer": "^10.4.21",
+    "gh-pages": "^6.3.0",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17"
+  }
+}

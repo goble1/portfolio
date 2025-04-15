@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { sketches } from '../../data/sketches.js';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Visualizations">
+  <section class="max-w-6xl mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-8 text-center">
+      Visualizations
+    </h1>
+    <p class="text-center text-gray-700 dark:text-gray-300 mb-6">
+      Click a sketch to view it in action.
+    </p>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {sketches.map((sketch) => (
+        <a
+          href={`${base}visualizations/${sketch.slug}`}
+          class="block p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow hover:shadow-lg transition-shadow duration-300"
+        >
+          <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+            {sketch.title}
+          </h2>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            {sketch.description}
+          </p>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+

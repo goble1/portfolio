@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import {
+  contact,
+  education,
+  experience,
+  certifications,
+  awards,
+  skills
+} from '../../data/resumeData.js';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Resume">
+  <section class="max-w-4xl mx-auto px-4 py-12 space-y-10">
+    <!-- Header -->
+    <div class="text-center">
+      <h1 class="text-4xl font-bold text-blue-600 dark:text-blue-400">Craig Goble</h1>
+      <p class="text-gray-700 dark:text-gray-300 mt-2">
+        <a href={`mailto:${contact.email}`} class="underline text-blue-500 dark:text-blue-400">{contact.email}</a> <br />
+        <a href={contact.website} class="text-blue-500 dark:text-blue-400">{contact.website}</a><br />
+        <a href={contact.linkedin} class="text-blue-500 dark:text-blue-400">LinkedIn</a> •
+        <a href={contact.github} class="text-blue-500 dark:text-blue-400">GitHub</a>
+      </p>
+    </div>
+
+    <!-- Education -->
+    <section>
+      <h2 class="text-2xl font-semibold border-b border-gray-300 dark:border-gray-600 mb-2">Education</h2>
+      {education.map((edu) => (
+        <div class="mb-4">
+          <strong>{edu.degree}</strong>, {edu.school} ({edu.date})<br />
+          <small class="text-gray-600 dark:text-gray-400">{edu.details}</small>
+        </div>
+      ))}
+    </section>
+
+    <!-- Skills -->
+    <section>
+      <h2 class="text-2xl font-semibold border-b border-gray-300 dark:border-gray-600 mb-2">Skills</h2>
+      <p><strong>Languages:</strong> 
+        <div class="flex flex-wrap gap-3 justify-left">
+          <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white" alt="Bash" />
+          <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+          <img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Golang" />
+          <img src="https://img.shields.io/badge/SQL-003B57?style=for-the-badge&logo=postgresql&logoColor=white" alt="SQL" />
+          <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
+          <img src="https://img.shields.io/badge/LaTeX-008080?style=for-the-badge&logo=latex&logoColor=white" alt="LaTeX" />
+        </div>
+      </p>
+      <p><strong>Tools:</strong> 
+        <div class="flex flex-wrap gap-3 justify-left">
+          <img src="https://img.shields.io/badge/AWS-%23FF9900?style=for-the-badge&logo=amazonaws&logoColor=white" alt="AWS" />
+          <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Kubernetes" />
+          <img src="https://img.shields.io/badge/Terraform-623CE4?style=for-the-badge&logo=terraform&logoColor=white" alt="Terraform" />
+          <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux" />
+          <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
+          <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
+          <img src="https://img.shields.io/badge/Splunk-000000?style=for-the-badge&logo=splunk&logoColor=white" alt="Splunk" />
+          <img src="https://img.shields.io/badge/Dynatrace-1496FF?style=for-the-badge&logo=dynatrace&logoColor=white" alt="Dynatrace" />
+          <img src="https://img.shields.io/badge/PagerDuty-06C755?style=for-the-badge&logo=pagerduty&logoColor=white" alt="PagerDuty" />
+          <img src="https://img.shields.io/badge/Neovim-57A143?style=for-the-badge&logo=neovim&logoColor=white" alt="Neovim" />
+        </div>
+      </p>
+    </section>
+
+    <!-- Experience -->
+    <section>
+      <h2 class="text-2xl font-semibold border-b border-gray-300 dark:border-gray-600 mb-2">Experience</h2>
+      {experience.map((job) => (
+        <div class="mb-6">
+          <h3 class="text-lg font-bold">{job.title} @ {job.company}</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 italic">{job.date} – {job.location}</p>
+          <ul class="list-disc list-inside mt-2 space-y-1 text-gray-800 dark:text-gray-100">
+            {job.bullets.map((line) => <li>{line}</li>)}
+          </ul>
+        </div>
+      ))}
+    </section>
+
+    <!-- Certifications -->
+    <section>
+      <h2 class="text-2xl font-semibold border-b border-gray-300 dark:border-gray-600 mb-2">Certifications</h2>
+      <ul class="list-disc list-inside text-gray-800 dark:text-gray-100">
+        {certifications.map((c) => <li>{c}</li>)}
+      </ul>
+    </section>
+    <section class="mt-10">
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 items-center justify-center">
+        <img src={`${base}logos/aws-solutions-architect-prof.png`} alt="AWS SA Pro" title="AWS SA Pro" class="w-20 h-auto mx-auto" />
+        <img src={`${base}logos/aws-devops-engineer-prof.png`} alt="AWS DevOps Pro" title="AWS DevOps Pro" class="w-20 h-auto mx-auto" />
+        <img src={`${base}logos/aws-security.png`} alt="AWS Security" title="AWS Security" class="w-20 h-auto mx-auto" />
+        <img src={`${base}logos/aws-database.png`} alt="AWS Database" title="AWS Database" class="w-20 h-auto mx-auto" />
+        <img src={`${base}logos/aws-advanced-networking.png`} alt="AWS Networking" title="AWS Networking" class="w-20 h-auto mx-auto" />
+        <img src={`${base}logos/aws-solutions-architect.png`} alt="AWS SA Associate" title="AWS SA Associate" class="w-20 h-auto mx-auto" />
+        <img src={`${base}logos/aws-developer.png`} alt="AWS Dev Associate" title="AWS Dev Associate" class="w-20 h-auto mx-auto" />
+        <img src={`${base}logos/aws-sysops-administrator.png`} alt="AWS SysOps" title="AWS SysOps" class="w-20 h-auto mx-auto" />
+        <img src={`${base}logos/aws-ai-practitioner.png`} alt="AWS ai prac" title="AWS ai prac" class="w-20 h-auto mx-auto" />
+        <img src={`${base}logos/cka.png`} alt="CKA" title="CKA" class="w-20 h-auto mx-auto" />
+        <img src={`${base}logos/ckad.png`} alt="CKAD" title="CKAD" class="w-20 h-auto mx-auto" />
+        <img src={`${base}logos/cloud-digital-leader.png`} alt="Google Cloud Digital Leader" title="Google Cloud Digital Leader" class="w-20 h-auto mx-auto" />
+        <img src={`${base}logos/terraform-associate.png`} alt="Terraform Associate" title="Terraform Associate" class="w-20 h-auto mx-auto" />
+        <img src={`${base}logos/LPIC-1-Large.png`} alt="LPIC-1" title="LPIC-1" class="w-20 h-auto mx-auto" />
+        <img src={`${base}logos/pcep-30-02.png`} alt="PCEP" title="PCEP" class="w-20 h-auto mx-auto" />
+        <img src={`${base}logos/pcap-31-03.png`} alt="PCAP" title="PCAP" class="w-20 h-auto mx-auto" />
+      </div>
+    </section>
+
+    <!-- Awards -->
+    <section>
+      <h2 class="text-2xl font-semibold border-b border-gray-300 dark:border-gray-600 mb-2">Awards</h2>
+      <ul class="list-disc list-inside text-gray-800 dark:text-gray-100">
+        {awards.map((a) => <li>{a}</li>)}
+      </ul>
+    </section>
+
+  </section>
+</BaseLayout>
+

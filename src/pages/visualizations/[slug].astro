@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { sketches } from '../../data/sketches.js';
+
+export async function getStaticPaths() {
+  return sketches.map((sketch) => ({
+    params: { slug: sketch.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const sketch = sketches.find((s) => s.slug === slug);
+
+if (!sketch) {
+  throw new Error(`Visualization not found: ${slug}`);
+}
+
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title={sketch.title}>
+  <section class="max-w-4xl mx-auto px-4 py-12">
+    <h1 class="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-6 text-center">{sketch.title}</h1>
+    <p class="text-center text-gray-700 dark:text-gray-300 mb-8 max-w-xl mx-auto">{sketch.description}</p>
+    <div class="w-fit mx-auto border rounded shadow overflow-hidden">
+      <iframe
+        src={`${base}/embed.html?sketch=${slug}`}
+        title={sketch.title}
+        width="600"
+        height="400"
+        class="block"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </section>
+</BaseLayout>
+

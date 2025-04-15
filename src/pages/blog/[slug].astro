@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+//import { getCollection, getEntryBySlug, type CollectionEntry } from 'astro:content';
+import { getCollection, getEntryBySlug, CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+//const post = await getEntryBySlug<'blog'>( 'blog', slug ) as CollectionEntry<'blog'>;
+const post = await getEntryBySlug('blog', slug) as CollectionEntry<'blog'>;
+
+if (!post) throw new Error(`Post not found: ${slug}`);
+
+const { title, pubDate } = post.data;
+const { Content } = await post.render(); // ✅ Extract the Markdown component
+---
+
+<BaseLayout title={title}>
+  <section class="max-w-3xl mx-auto px-4 py-12 prose prose-blue dark:prose-invert">
+    <h1 class="mb-2">{title}</h1>
+    <p class="text-sm text-gray-500 dark:text-gray-400 mb-6">{pubDate}</p>
+    <Content /> <!-- ✅ Render the Markdown post -->
+  </section>
+</BaseLayout>
+
