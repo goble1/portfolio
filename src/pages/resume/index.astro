@@ -65,20 +65,6 @@ const base = import.meta.env.BASE_URL;
       </p>
     </section>
 
-    <!-- Experience -->
-    <section>
-      <h2 class="text-2xl font-semibold border-b border-gray-300 dark:border-gray-600 mb-2">Experience</h2>
-      {experience.map((job) => (
-        <div class="mb-6">
-          <h3 class="text-lg font-bold">{job.title} @ {job.company}</h3>
-          <p class="text-sm text-gray-600 dark:text-gray-400 italic">{job.date} – {job.location}</p>
-          <ul class="list-disc list-inside mt-2 space-y-1 text-gray-800 dark:text-gray-100">
-            {job.bullets.map((line) => <li>{line}</li>)}
-          </ul>
-        </div>
-      ))}
-    </section>
-
     <!-- Certifications -->
     <section>
       <h2 class="text-2xl font-semibold border-b border-gray-300 dark:border-gray-600 mb-2">Certifications</h2>
@@ -116,6 +102,21 @@ const base = import.meta.env.BASE_URL;
         {awards.map((a) => <li>{a}</li>)}
       </ul>
     </section>
+
+    <!-- Experience -->
+    <section>
+      <h2 class="text-2xl font-semibold border-b border-gray-300 dark:border-gray-600 mb-2">Experience</h2>
+      {experience.map((job) => (
+        <div class="mb-6">
+          <h3 class="text-lg font-bold">{job.title} @ {job.company}</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 italic">{job.date} – {job.location}</p>
+          <ul class="list-disc list-inside mt-2 space-y-1 text-gray-800 dark:text-gray-100">
+            {job.bullets.map((line) => <li>{line}</li>)}
+          </ul>
+        </div>
+      ))}
+    </section>
+
 
   </section>
 </BaseLayout>
