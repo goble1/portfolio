@@ -82,8 +82,10 @@ const base = import.meta.env.BASE_URL;
     <!-- Certifications -->
     <section>
       <h2 class="text-2xl font-semibold border-b border-gray-300 dark:border-gray-600 mb-2">Certifications</h2>
-      <ul class="list-disc list-inside text-gray-800 dark:text-gray-100">
-        {certifications.map((c) => <li>{c}</li>)}
+      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 text-gray-800 dark:text-gray-100 list-disc list-inside pl-4">
+        {certifications.map((c) => (
+          <li>{c}</li>
+        ))}
       </ul>
     </section>
     <section class="mt-10">
