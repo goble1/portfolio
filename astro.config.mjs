@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
-  base: '/portfolio/',
+  // Removed base: '/portfolio/' for custom domain
   output: 'static',
   outDir: 'docs',
   integrations: [tailwind()],
