@@ -6,8 +6,11 @@ export default defineConfig({
   base: '/',
   output: 'static',
   outDir: 'docs',
-  // Remove the relative paths and let Astro use standard paths
-  // This prevents issues with path resolution on GitHub Pages
+  build: {
+    assets: 'assets',
+    assetsPrefix: ''
+  },
+  // CSS is served from site root with no prefix needed
   integrations: [tailwind()],
   markdown: {
     drafts: true, // optional, lets you draft blog posts
