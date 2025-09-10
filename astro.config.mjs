@@ -8,9 +8,9 @@ export default defineConfig({
   outDir: 'docs',
   build: {
     assets: 'assets',
-    assetsPrefix: ''
+    assetsPrefix: 'https://craiggoble.com'
   },
-  // CSS is served from site root with no prefix needed
+  // Use absolute URLs to ensure correct path resolution across all pages
   integrations: [tailwind()],
   markdown: {
     drafts: true, // optional, lets you draft blog posts
