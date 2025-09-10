@@ -20,9 +20,13 @@
     <script>
       const urlParams = new URLSearchParams(window.location.search);
       const sketch = urlParams.get("sketch");
+
       if (sketch) {
+        // Dynamically infer base path (e.g., /portfolio)
+        const base = window.location.pathname.split("/embed.html")[0];
+
         const script = document.createElement("script");
-        script.src = `/sketches/${sketch}.js`;
+        script.src = `${base}/sketches/${sketch}.js`;
         document.body.appendChild(script);
       }
     </script>
