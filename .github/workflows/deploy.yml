@@ -29,15 +29,41 @@ jobs:
       - name: Fix CSS paths 🔧
         run: |
           echo "Fixing CSS paths in HTML files..."
-          # Fix all references to _astro CSS files
-          find docs -name "*.html" -exec sed -i 's|href="/_astro/|href="./assets/|g' {} \;
-          # Fix direct references to _slug_ CSS file at root
-          find docs -name "*.html" -exec sed -i 's|href="/_slug_|href="./assets/_slug_|g' {} \;
-          # Create assets directory and copy all CSS files
+          # Create assets directory
           mkdir -p docs/assets
-          cp -r docs/_astro/* docs/assets/ || echo "No _astro files to copy"
+          
+          # Copy all CSS from _astro directory if it exists
+          if [ -d "docs/_astro" ]; then
+            cp -r docs/_astro/* docs/assets/ || echo "No _astro files to copy"
+          fi
+          
           # Copy any CSS files in root to assets directory
           find docs -maxdepth 1 -name "*.css" -exec cp {} docs/assets/ \; || echo "No root CSS files to copy"
+          
+          # Find the actual CSS filename pattern in the build output
+          CSS_FILE=$(find docs/assets -name "*.css" | head -n 1 | xargs basename 2>/dev/null || echo "_slug_.F5P_0dVk.css")
+          echo "Found CSS file: $CSS_FILE"
+          
+          # Fix all CSS references in HTML files to use relative paths
+          find docs -name "*.html" -exec sed -i 's|href="/_astro/[^"]*\.css"|href="./assets/'"$CSS_FILE"'"|g' {} \;
+          find docs -name "*.html" -exec sed -i 's|href="/_slug_[^"]*\.css"|href="./assets/'"$CSS_FILE"'"|g' {} \;
+          
+          # Ensure CSS file is properly named in assets directory
+          if [ -f "docs/assets/$CSS_FILE" ]; then
+            echo "CSS file exists in assets directory"
+          else
+            echo "WARNING: CSS file not found in assets directory"
+            # Try to copy from anywhere it might exist
+            find docs -name "*.css" -exec cp {} docs/assets/ \; || echo "Failed to find CSS files"
+          fi
+          
+          # Debug info
+          echo "Contents of assets directory:"
+          ls -la docs/assets
+          
+          echo "CSS references in HTML files:"
+          grep -r "stylesheet" docs/*.html || echo "No stylesheet references found"
+          
           echo "CSS path fix complete"
 
       - name: Deploy 🚀
