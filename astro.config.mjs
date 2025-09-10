@@ -6,11 +6,7 @@ export default defineConfig({
   base: '/',
   output: 'static',
   outDir: 'docs',
-  build: {
-    assets: 'assets',
-    assetsPrefix: 'https://craiggoble.com'
-  },
-  // Use absolute URLs to ensure correct path resolution across all pages
+  // Simplified build config to avoid path issues
   integrations: [tailwind()],
   markdown: {
     drafts: true, // optional, lets you draft blog posts

@@ -5,3 +5,11 @@
 Gemfile.lock
 _site
 *.gem
+
+# Astro build output
+docs/
+dist/
+node_modules/
+
+# Keep CNAME file for GitHub Pages
+!docs/CNAME
