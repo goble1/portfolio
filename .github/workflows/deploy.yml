@@ -29,9 +29,15 @@ jobs:
       - name: Fix CSS paths 🔧
         run: |
           echo "Fixing CSS paths in HTML files..."
+          # Fix all references to _astro CSS files
           find docs -name "*.html" -exec sed -i 's|href="/_astro/|href="./assets/|g' {} \;
+          # Fix direct references to _slug_ CSS file at root
+          find docs -name "*.html" -exec sed -i 's|href="/_slug_|href="./assets/_slug_|g' {} \;
+          # Create assets directory and copy all CSS files
           mkdir -p docs/assets
-          cp docs/_astro/* docs/assets/ || echo "No assets to copy"
+          cp -r docs/_astro/* docs/assets/ || echo "No _astro files to copy"
+          # Copy any CSS files in root to assets directory
+          find docs -maxdepth 1 -name "*.css" -exec cp {} docs/assets/ \; || echo "No root CSS files to copy"
           echo "CSS path fix complete"
 
       - name: Deploy 🚀
