@@ -26,6 +26,14 @@ jobs:
       - name: Build site 🏗️
         run: npm run build
 
+      - name: Fix CSS paths 🔧
+        run: |
+          echo "Fixing CSS paths in HTML files..."
+          find docs -name "*.html" -exec sed -i 's|href="/_astro/|href="./assets/|g' {} \;
+          mkdir -p docs/assets
+          cp docs/_astro/* docs/assets/ || echo "No assets to copy"
+          echo "CSS path fix complete"
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
