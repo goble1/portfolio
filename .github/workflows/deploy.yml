@@ -30,22 +30,22 @@ jobs:
         run: |
           echo "Fixing CSS paths in HTML files..."
           # Create assets directory in root and each subdirectory
-          mkdir -p docs/assets
+          mkdir -p dist/assets
           
-          # Find all subdirectories in docs that contain HTML files
-          SUBDIRS=$(find docs -type d -not -path "*/\.*" -not -path "*/assets" -not -path "*/node_modules*" | sort)
+          # Find all subdirectories in dist that contain HTML files
+          SUBDIRS=$(find dist -type d -not -path "*/\.*" -not -path "*/assets" -not -path "*/node_modules*" | sort)
           echo "Found subdirectories: $SUBDIRS"
           
           # Copy all CSS from _astro directory if it exists
-          if [ -d "docs/_astro" ]; then
-            cp -r docs/_astro/* docs/assets/ || echo "No _astro files to copy"
+          if [ -d "dist/_astro" ]; then
+            cp -r dist/_astro/* dist/assets/ || echo "No _astro files to copy"
           fi
           
           # Copy any CSS files in root to assets directory
-          find docs -maxdepth 1 -name "*.css" -exec cp {} docs/assets/ \; || echo "No root CSS files to copy"
+          find dist -maxdepth 1 -name "*.css" -exec cp {} dist/assets/ \; || echo "No root CSS files to copy"
           
           # Find the actual CSS filename pattern in the build output
-          CSS_FILE=$(find docs/assets -name "*.css" | head -n 1 | xargs basename 2>/dev/null || echo "_slug_.F5P_0dVk.css")
+          CSS_FILE=$(find dist/assets -name "*.css" | head -n 1 | xargs basename 2>/dev/null || echo "_slug_.F5P_0dVk.css")
           echo "Found CSS file: $CSS_FILE"
           
           # Create assets directory in each subdirectory and copy CSS file
@@ -53,13 +53,13 @@ jobs:
             if [ -d "$DIR" ]; then
               echo "Creating assets directory in $DIR"
               mkdir -p "$DIR/assets"
-              cp docs/assets/*.css "$DIR/assets/" || echo "Failed to copy CSS to $DIR/assets/"
+              cp dist/assets/*.css "$DIR/assets/" || echo "Failed to copy CSS to $DIR/assets/"
             fi
           done
           
           # Fix CSS references in root HTML files
-          find docs -maxdepth 1 -name "*.html" -exec sed -i 's|href="/_astro/[^"]*\.css"|href="./assets/'"$CSS_FILE"'"|g' {} \;
-          find docs -maxdepth 1 -name "*.html" -exec sed -i 's|href="/_slug_[^"]*\.css"|href="./assets/'"$CSS_FILE"'"|g' {} \;
+          find dist -maxdepth 1 -name "*.html" -exec sed -i 's|href="/_astro/[^"]*\.css"|href="./assets/'"$CSS_FILE"'"|g' {} \;
+          find dist -maxdepth 1 -name "*.html" -exec sed -i 's|href="/_slug_[^"]*\.css"|href="./assets/'"$CSS_FILE"'"|g' {} \;
           
           # Fix CSS references in subdirectory HTML files
           for DIR in $SUBDIRS; do
@@ -74,21 +74,26 @@ jobs:
           
           # Debug info
           echo "CSS file distribution:"
-          find docs -name "*.css" | sort
+          find dist -name "*.css" | sort
           
           echo "CSS references in HTML files:"
-          find docs -name "*.html" -exec grep -l "stylesheet" {} \; | xargs grep "stylesheet" || echo "No stylesheet references found"
+          find dist -name "*.html" -exec grep -l "stylesheet" {} \; | xargs grep "stylesheet" || echo "No stylesheet references found"
           
           echo "CSS path fix complete"
 
       - name: Add .nojekyll file
         run: |
-          touch docs/.nojekyll
+          touch dist/.nojekyll
           echo "Added .nojekyll file to disable Jekyll processing"
+          
+      - name: Copy CNAME file
+        run: |
+          echo "craiggoble.com" > dist/CNAME
+          echo "Added CNAME file for custom domain"
           
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: docs # The folder the action should deploy
+          folder: dist # The folder the action should deploy
           branch: gh-pages # The branch the action should deploy to
           clean: true # Automatically remove deleted files from the deployment branch
