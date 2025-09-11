@@ -66,6 +66,11 @@ jobs:
           
           echo "CSS path fix complete"
 
+      - name: Add .nojekyll file
+        run: |
+          touch docs/.nojekyll
+          echo "Added .nojekyll file to disable Jekyll processing"
+          
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
