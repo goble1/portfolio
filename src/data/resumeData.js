@@ -85,6 +85,8 @@ export const experience = [
 ];
 
 export const certifications = [
+  "Microsoft Github Actions (2025)",
+  "Python Professional Python Programmer (2025)",
   "AWS AI Practitioner (2025)",
   "AWS Solutions Architect Professional (2021,2024)",
   "Kubernetes Application Developer (2024)",
