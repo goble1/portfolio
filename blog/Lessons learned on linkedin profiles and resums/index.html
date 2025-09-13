@@ -1,17 +1,3 @@
-          const html = document.documentElement;
-          const isDark = html.classList.toggle('dark');
-          localStorage.setItem('theme', isDark ? 'dark' : 'light');
-
-          const sun = document.getElementById('sun');
-          const moon = document.getElementById('moon');
-          
-          sun.classList.toggle('hidden', isDark);
-          moon.classList.toggle('hidden', !isDark);
-
-          const icon = isDark ? moon : sun;
-          icon.classList.add('scale-90', 'rotate-12');
-          setTimeout(() => icon.classList.remove('scale-90', 'rotate-12'), 300);
-        "> <span id="sun" class="block dark:hidden"> <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white transition-transform duration-300 transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"> <circle cx="12" cy="12" r="5"></circle> <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path> </svg> </span> <span id="moon" class="hidden dark:block"> <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white transition-transform duration-300 transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"> <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"></path> </svg> </span> </button> </div> </nav> </header> <main class="px-4 py-8">  <section class="max-w-3xl mx-auto px-4 py-12 prose prose-blue dark:prose-invert"> <h1 class="mb-2">Lessons learned on linkedin profiles and resums</h1> <p class="text-sm text-gray-500 dark:text-gray-400 mb-6">2025-03-01</p> <h1 id="lessons-learned-on-linkedin-profiles-and-resumes">Lessons Learned on LinkedIn Profiles and Resumes</h1>
 <p>When it comes to building a career in tech, your LinkedIn profile and resume are your storefronts. They’re often the very first impressions you’ll make—on algorithms, recruiters, and hiring managers. After spending years refining both, and after plenty of trial and error, I’ve learned some lessons worth sharing.</p>
 <h2 id="linkedin-playing-the-algorithm-and-adding-real-value">LinkedIn: Playing the Algorithm and Adding Real Value</h2>
 <p>The logic of LinkedIn is simple: keywords and activity. Recruiters rely heavily on search, and LinkedIn’s algorithm decides who rises to the top. That means if you want to show up, your profile has to be optimized for those searches.</p>
