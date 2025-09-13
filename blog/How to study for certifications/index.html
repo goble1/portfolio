@@ -1,0 +1,115 @@
+<!DOCTYPE html><html lang="en" class=""> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>How to study for certifications</title><script type="module">localStorage.getItem("theme")==="dark"||!("theme"in localStorage)&&window.matchMedia("(prefers-color-scheme: dark)").matches?document.documentElement.classList.add("dark"):document.documentElement.classList.remove("dark");</script><link rel="stylesheet" href="./assets/_slug_.DVKkdtwo.css"></head> <body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100"> <header class="bg-gray-900 text-white shadow-md sticky top-0 z-50"> <nav class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center"> <h1 class="text-lg font-semibold tracking-wide">Craig Goble</h1> <div class="flex items-center gap-6"> <ul class="flex gap-6 text-sm font-medium list-none m-0 p-0"> <li> <a href="/" class="hover:text-blue-400 transition-colors duration-200"> About Me </a> </li><li> <a href="/visualizations" class="hover:text-blue-400 transition-colors duration-200"> Visualizations </a> </li><li> <a href="/resume" class="hover:text-blue-400 transition-colors duration-200"> Resume </a> </li><li> <a href="/blog" class="hover:text-blue-400 transition-colors duration-200"> Blog </a> </li> </ul> <button class="w-8 h-8 p-1 rounded hover:bg-gray-800 transition" aria-label="Toggle Dark Mode" onclick="
+          const html = document.documentElement;
+          const isDark = html.classList.toggle('dark');
+          localStorage.setItem('theme', isDark ? 'dark' : 'light');
+
+          const sun = document.getElementById('sun');
+          const moon = document.getElementById('moon');
+          
+          sun.classList.toggle('hidden', isDark);
+          moon.classList.toggle('hidden', !isDark);
+
+          const icon = isDark ? moon : sun;
+          icon.classList.add('scale-90', 'rotate-12');
+          setTimeout(() => icon.classList.remove('scale-90', 'rotate-12'), 300);
+        "> <span id="sun" class="block dark:hidden"> <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white transition-transform duration-300 transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"> <circle cx="12" cy="12" r="5"></circle> <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path> </svg> </span> <span id="moon" class="hidden dark:block"> <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white transition-transform duration-300 transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"> <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"></path> </svg> </span> </button> </div> </nav> </header> <main class="px-4 py-8">  <section class="max-w-3xl mx-auto px-4 py-12 prose prose-blue dark:prose-invert"> <h1 class="mb-2">How to study for certifications</h1> <p class="text-sm text-gray-500 dark:text-gray-400 mb-6">2025-02-01</p> <p>Studying for technical certifications can feel overwhelming. There’s an endless amount of content, and it’s easy to fall into the trap of passive learning—watching hours of lectures without ever truly absorbing the material. Over time, I’ve developed a structured approach that keeps me consistent, leverages active recall, and makes test day feel like just another practice run.</p>
+<hr>
+<h2 id="coursework">Coursework</h2>
+<p>The foundation of my study plan is video courses. These give you a structured path through the material, the authors also prioritize whats on the exam. Most exams take about 3 months half video course half practice exams.</p>
+<ul>
+<li><strong>Watch efficiently</strong>: I watch course videos at 1.25× speed—fast enough to save time, but not so fast that I lose comprehension. I recommend an hour a day set a goal of mins watched.</li>
+<li><strong>Flashcards as you go</strong>: From each video, I create a single, focused flashcard. The goal isn’t to capture every detail, but to extract one essential fact or concept per lesson. Some exams are not multiple choise but I still think flash cards are a good idea. think of concepts you can explain or commands with options.</li>
+<li><strong>Leverage tools</strong>: I use Anki on desktop so I can copy and paste text or screenshots quickly. I then use my phone to do the flashcards that ill go over later.</li>
+</ul>
+<hr>
+<h2 id="flashcards">Flashcards</h2>
+<p>Flashcards are our way of simulating the exam especially multiple choise. we need to practice active recalling information when prompted. This makes them far more valuable than passively re-reading notes.</p>
+<ul>
+<li><strong>Prioritize active recall</strong>: Don’t just glance at cards—force yourself to answer before flipping.</li>
+<li><strong>Daily routine</strong>:
+<ol>
+<li>Review existing flashcards in the morning before your videos (best time for retention).</li>
+<li>Watch videos or take a practice exam, then create new cards from what you learned.</li>
+<li>Review your new cards before bed to strengthen memory consolidation.</li>
+<li>I like to set rules to help me get through them before I drink my coffee I have to do 10 or before I get to check <social media="" app="" of="" your="" choise=""> I have to do 3</social></li>
+</ol>
+</li>
+</ul>
+<h3 id="anki-setup">Anki Setup</h3>
+<p>A few small tweaks in Anki settings make a big difference:</p>
+<ul>
+<li>Set the <strong>maximum review interval to 30 days</strong> to keep concepts fresh.</li>
+<li>Always <strong>review older cards before new ones</strong> so you’re reinforcing knowledge first.</li>
+<li>Have dups if you already have a flashcard but got it wrong on a practice test give yourself another one. maybe you need to see this question every 15days instead of 30</li>
+</ul>
+<h3 id="card-types">Card Types</h3>
+<p>I break flashcards into two categories:</p>
+<ul>
+<li>
+<p><strong>Fact-based</strong>: Straightforward Q&#x26;A. These can include multiple related questions, but keep them tight.</p>
+<ul>
+<li>Example: <em>“How much temporary storage do Lambda functions have?”</em></li>
+<li>these can have multiple related questions on them, but not too much you dont want to keep redoing 10q cause you keep getting 1 wrong</li>
+</ul>
+</li>
+<li>
+<p><strong>Conceptual</strong>: These test understanding of how systems work together.</p>
+<ul>
+<li>Example: <em>“How do SQS queues trigger Lambda functions?”</em></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="practice-tests">Practice Tests</h2>
+<p>Practice exams are where the real learning happens. It’s not enough to just take them—you need to review them thoroughly but efficiently.</p>
+<ul>
+<li><strong>Review as you go</strong>: On platforms like Udemy, I recommend reviewing after each question rather than waiting until the end. I found that I forget what I was thinking when I do the view at end.</li>
+<li>If you must review at the end I take notes I use a simple 1–4 scale and include notes on what I was thinking.
+<ul>
+<li><strong>1</strong> – No idea. Read the entire explanation carefully.</li>
+<li><strong>2</strong> – Educated guess. Review the two answers you weren’t sure about.</li>
+<li><strong>3</strong> – Partial understanding. Maybe you knew the right answer but couldn’t rule out the others, or you ruled out the wrong ones but weren’t sure why the right one was correct.</li>
+<li><strong>4</strong> – Full confidence. Skip the review and save time.</li>
+</ul>
+</li>
+</ul>
+<p>This rating system helps minimize review time. You should still be making flashcards at this point. The practice test section takes just as long as the course.</p>
+<hr>
+<h2 id="why-certifications">Why Certifications?</h2>
+<p>Beyond personal growth, certifications have practical career benefits:</p>
+<ul>
+<li>They make it easier to justify a top score in your self-review growth category.</li>
+<li>Most companies reimburse certification costs, so the investment is minimal.</li>
+<li>They add credibility to your LinkedIn profile, signaling to recruiters that your skills are verified.</li>
+<li>I like like to pair it with hands on experience, this helps alot and combats the argument of “people learn best with hands on”</li>
+</ul>
+<hr>
+<h2 id="pro-tips">Pro Tips</h2>
+<ul>
+<li>Don’t underestimate the <strong>LinkedIn effect</strong>—certifications often show up in recruiter searches.</li>
+<li>Treat certifications as <strong>stepping stones</strong>, not finish lines. Use them to structure your learning, but keep building beyond the test.</li>
+<li>Practice the “real-world” side of the exam (debugging, navigating docs, editing files) so you’re not fumbling with basics on test day.</li>
+<li>Once you get 3 you can add a certifications section to your resume, if you have 2 I suggest keeping it in the school section</li>
+</ul>
+<hr>
+<h2 id="some-recommended-resources">Some Recommended Resources</h2>
+<h3 id="aws">AWS</h3>
+<ul>
+<li><strong>Course</strong>: Stéphane Maarek (Udemy) – comprehensive, clear, and always updated.</li>
+<li><strong>Practice Tests</strong>:
+<ul>
+<li>Stéphane Maarek – mirrors the style and difficulty of the real exam, with great explanations.</li>
+<li>Neal Davis – similar style and difficulty, also excellent explanations.</li>
+<li>Tutor Dojo – harder than the exam, with lots of obscure scenarios. Good if you want to be over-prepared.</li>
+<li>WizLabs – generally poor quality questions and explanations; not recommended.</li>
+</ul>
+</li>
+</ul>
+<h3 id="kubernetes">Kubernetes</h3>
+<ul>
+<li><strong>Course</strong>: Mumshad Mannambeth (KodeKloud). You can find his courses on Udemy, but you get more value directly through KodeKloud.</li>
+<li><strong>Practice Strategy</strong>: Kubernetes exams are hands-on. Don’t waste time fumbling with your text editor, navigating files, or searching the docs. The better you are at these fundamentals, the more time you’ll have to actually solve problems.</li>
+</ul>
+<hr>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>Certifications are more than just resume boosters—they’re a structured way to push yourself through complex topics. With a system of coursework, flashcards, and practice exams, you can approach them with confidence and turn studying into a daily habit instead of a last-minute scramble.</p> <!-- ✅ Render the Markdown post --> </section>  </main> </body></html>
