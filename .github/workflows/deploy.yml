@@ -64,8 +64,9 @@ jobs:
             # First, remove any existing CSS links to prevent duplicates
             sed -i '/<link rel="stylesheet" href="[^"]*\.css">/d' "$file"
             
-            # Then add both CSS files with absolute paths in the head section
-            sed -i 's|</head>|<link rel="stylesheet" href="/assets/_slug_.F5P_0dVk.css">\n    <link rel="stylesheet" href="/assets/_slug_.DVKkdtwo.css">\n  </head>|g' "$file"
+            # Then add the CSS file with absolute path in the head section
+            # Using the actual CSS filename found in the latest build
+            sed -i 's|</head>|<link rel="stylesheet" href="/assets/_slug_.D4Tn2_qj.css">\n  </head>|g' "$file"
           done
           
           # Debug info
