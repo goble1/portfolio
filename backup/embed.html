@@ -23,12 +23,12 @@
       const sketch = urlParams.get("sketch");
 
       if (sketch) {
-        // Dynamically infer base path (e.g., /portfolio)
-        const base = window.location.pathname.split("/embed.html")[0];
-
+        // Use an absolute path for sketches
         const script = document.createElement("script");
-        script.src = `${base}/sketches/${sketch}.js`;
+        script.src = `/sketches/${sketch}.js`;
         document.body.appendChild(script);
+        
+        console.log(`Loading sketch: /sketches/${sketch}.js`);
       }
     </script>
   </body>
