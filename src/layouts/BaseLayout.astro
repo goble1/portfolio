@@ -1,6 +1,9 @@
 ---
 import Header from '../components/Header.astro';
 const { title = "Craig Goble" } = Astro.props;
+
+// Use import.meta.env.BASE_URL to get the base URL
+const base = import.meta.env.BASE_URL;
 ---
 
 <!DOCTYPE html>
@@ -20,6 +23,7 @@ const { title = "Craig Goble" } = Astro.props;
         document.documentElement.classList.remove("dark");
       }
     </script>
+    <link rel="stylesheet" href={`${base}assets/_slug_.F5P_0dVk.css`} />
   </head>
   <body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100">
     <Header />

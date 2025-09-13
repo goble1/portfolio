@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-//import { getCollection, getEntryBySlug, type CollectionEntry } from 'astro:content';
 import { getCollection, getEntryBySlug, CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -11,13 +10,12 @@ export async function getStaticPaths() {
 }
 
 const { slug } = Astro.params;
-//const post = await getEntryBySlug<'blog'>( 'blog', slug ) as CollectionEntry<'blog'>;
 const post = await getEntryBySlug('blog', slug) as CollectionEntry<'blog'>;
 
 if (!post) throw new Error(`Post not found: ${slug}`);
 
 const { title, pubDate } = post.data;
-const { Content } = await post.render(); // ✅ Extract the Markdown component
+const { Content } = await post.render(); // Extract the Markdown component
 ---
 
 <BaseLayout title={title}>
