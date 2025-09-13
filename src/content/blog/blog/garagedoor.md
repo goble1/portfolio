@@ -18,6 +18,5 @@ I wanted a way to open my garage door with my phone. While most apps are around 
 - snack box
 
 ### Pictures
-
-<img src="/pages/cgoble/portfolio/pictures/garage_door_opener.jpg" alt="garage door opener" width="400" />
+<img src="/images/blog/your-post-slug/garage_door_opener.jpg" alt="garage door opener" width="400" />
 
