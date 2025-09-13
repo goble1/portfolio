@@ -31,7 +31,18 @@ const navItems = [
       <button
         class="w-8 h-8 p-1 rounded hover:bg-gray-800 transition"
         aria-label="Toggle Dark Mode"
-        onclick="
+        id="theme-toggle-button"
+      >
+        <span id="sun" class="block dark:hidden">
+          <SunIcon />
+        </span>
+        <span id="moon" class="hidden dark:block">
+          <MoonIcon />
+        </span>
+      </button>
+
+      <script>
+        document.getElementById('theme-toggle-button').addEventListener('click', function() {
           const html = document.documentElement;
           const isDark = html.classList.toggle('dark');
           localStorage.setItem('theme', isDark ? 'dark' : 'light');
@@ -45,16 +56,8 @@ const navItems = [
           const icon = isDark ? moon : sun;
           icon.classList.add('scale-90', 'rotate-12');
           setTimeout(() => icon.classList.remove('scale-90', 'rotate-12'), 300);
-        "
-      >
-        <span id="sun" class="block dark:hidden">
-          <SunIcon />
-        </span>
-        <span id="moon" class="hidden dark:block">
-          <MoonIcon />
-        </span>
-      </button>
-      </button>
+        });
+      </script>
     </div>
   </nav>
 </header>
