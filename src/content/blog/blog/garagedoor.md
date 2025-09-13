@@ -1,3 +1,9 @@
+---
+title: "fast LED nano leaf"
+description: "Personal Projects Ive worked on"
+pubDate: "2025-01-01"
+slug: "fast LED nano leaf"
+---
 ## Garage door opener
 
 ### Design

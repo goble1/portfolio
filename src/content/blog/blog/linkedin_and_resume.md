@@ -1,7 +1,7 @@
 ---
 title: "Lessons learned on linkedin profiles and resums"
 description: "My opinion on resumes and linkedin"
-pubDate: "2025-04-04"
+pubDate: "2025-03-01"
 slug: "Lessons learned on linkedin profiles and resums"
 ---
 

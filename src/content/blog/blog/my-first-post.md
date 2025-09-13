@@ -1,7 +1,7 @@
 ---
 title: "My First Blog Post"
 description: "Why I'm building a personal site with Astro and p5.js"
-pubDate: "2025-04-04"
+pubDate: "2024-12-01"
 slug: "my-first-post"
 ---
 

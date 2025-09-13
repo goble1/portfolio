@@ -1,8 +1,8 @@
 ---
-title: "fast LED nano leaf"
+title: "Fast LED nano leaf"
 description: "Personal Projects Ive worked on"
-pubDate: "2025-03-01"
-slug: "Personal Projects"
+pubDate: "2025-04-01"
+slug: "Fast LED nano leaf"
 ---
 
 ## Custom wood nano leaf 
