@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sketch</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      canvas {
+        display: block;
+      }
+    </style>
+  <link rel="stylesheet" href="/assets/_slug_.D4Tn2_qj.css">
+  </head>
+  <body>
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const sketch = urlParams.get("sketch");
+
+      if (sketch) {
+        // Dynamically infer base path (e.g., /portfolio)
+        const base = window.location.pathname.split("/embed.html")[0];
+
+        const script = document.createElement("script");
+        script.src = `${base}/sketches/${sketch}.js`;
+        document.body.appendChild(script);
+      }
+    </script>
+  </body>
+</html>
+
