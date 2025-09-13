@@ -1,6 +1,6 @@
 ---
 title: "Fast LED nano leaf"
-description: "Personal Projects Ive worked on"
+description: "creating a nice wood version of nano leaf"
 pubDate: "2025-04-01"
 slug: "Fast LED nano leaf"
 ---

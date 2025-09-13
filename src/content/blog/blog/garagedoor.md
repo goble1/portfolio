@@ -1,8 +1,8 @@
 ---
-title: "fast LED nano leaf"
-description: "Personal Projects Ive worked on"
+title: "garage door opener"
+description: "creating a way to close/open garage door opener from my phone"
 pubDate: "2025-01-01"
-slug: "fast LED nano leaf"
+slug: "garage door opener"
 ---
 ## Garage door opener
 
