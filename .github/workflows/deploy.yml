@@ -44,11 +44,11 @@ jobs:
           # Copy any CSS files in root to assets directory
           find dist -maxdepth 1 -name "*.css" -exec cp {} dist/assets/ \; || echo "No root CSS files to copy"
           
-          # Find the actual CSS filename pattern in the build output
-          CSS_FILE=$(find dist/assets -name "*.css" | head -n 1 | xargs basename 2>/dev/null || echo "_slug_.F5P_0dVk.css")
-          echo "Found CSS file: $CSS_FILE"
+          # Find all CSS files
+          CSS_FILES=$(find dist/assets -name "*.css" | xargs -n1 basename 2>/dev/null)
+          echo "Found CSS files: $CSS_FILES"
           
-          # Create assets directory in each subdirectory and copy CSS file
+          # Create assets directory in each subdirectory and copy CSS files
           for DIR in $SUBDIRS; do
             if [ -d "$DIR" ]; then
               echo "Creating assets directory in $DIR"
@@ -57,18 +57,19 @@ jobs:
             fi
           done
           
-          # Fix CSS references in root HTML files
-          find dist -maxdepth 1 -name "*.html" -exec sed -i 's|href="/_astro/[^"]*\.css"|href="./assets/'"$CSS_FILE"'"|g' {} \;
-          find dist -maxdepth 1 -name "*.html" -exec sed -i 's|href="/_slug_[^"]*\.css"|href="./assets/'"$CSS_FILE"'"|g' {} \;
-          
-          # Fix CSS references in subdirectory HTML files
-          for DIR in $SUBDIRS; do
-            if [ -d "$DIR" ]; then
-              echo "Fixing CSS references in $DIR"
-              find "$DIR" -name "*.html" -exec sed -i 's|href="/_astro/[^"]*\.css"|href="./assets/'"$CSS_FILE"'"|g' {} \;
-              find "$DIR" -name "*.html" -exec sed -i 's|href="/_slug_[^"]*\.css"|href="./assets/'"$CSS_FILE"'"|g' {} \;
-              find "$DIR" -name "*.html" -exec sed -i 's|href="../_astro/[^"]*\.css"|href="./assets/'"$CSS_FILE"'"|g' {} \;
-              find "$DIR" -name "*.html" -exec sed -i 's|href="../_slug_[^"]*\.css"|href="./assets/'"$CSS_FILE"'"|g' {} \;
+          # For each HTML file, replace all CSS references with absolute paths
+          find dist -name "*.html" -type f | while read -r file; do
+            echo "Fixing CSS references in $file"
+            # Replace any CSS reference with absolute path
+            sed -i 's|href="/_astro/[^"]*\.css"|href="/assets/_slug_.F5P_0dVk.css"|g' "$file"
+            sed -i 's|href="/_slug_[^"]*\.css"|href="/assets/_slug_.F5P_0dVk.css"|g' "$file"
+            sed -i 's|href="../_astro/[^"]*\.css"|href="/assets/_slug_.F5P_0dVk.css"|g' "$file"
+            sed -i 's|href="../_slug_[^"]*\.css"|href="/assets/_slug_.F5P_0dVk.css"|g' "$file"
+            sed -i 's|href="./assets/_slug_[^"]*\.css"|href="/assets/_slug_.F5P_0dVk.css"|g' "$file"
+            
+            # Add a second CSS link if not already present
+            if ! grep -q "DVKkdtwo.css" "$file"; then
+              sed -i 's|href="/assets/_slug_.F5P_0dVk.css"|href="/assets/_slug_.F5P_0dVk.css"\n    <link rel="stylesheet" href="/assets/_slug_.DVKkdtwo.css"|g' "$file"
             fi
           done
           
