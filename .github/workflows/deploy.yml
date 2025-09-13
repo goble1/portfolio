@@ -57,20 +57,15 @@ jobs:
             fi
           done
           
-          # For each HTML file, replace all CSS references with absolute paths
+          # For each HTML file, fix CSS references
           find dist -name "*.html" -type f | while read -r file; do
             echo "Fixing CSS references in $file"
-            # Replace any CSS reference with absolute path
-            sed -i 's|href="/_astro/[^"]*\.css"|href="/assets/_slug_.F5P_0dVk.css"|g' "$file"
-            sed -i 's|href="/_slug_[^"]*\.css"|href="/assets/_slug_.F5P_0dVk.css"|g' "$file"
-            sed -i 's|href="../_astro/[^"]*\.css"|href="/assets/_slug_.F5P_0dVk.css"|g' "$file"
-            sed -i 's|href="../_slug_[^"]*\.css"|href="/assets/_slug_.F5P_0dVk.css"|g' "$file"
-            sed -i 's|href="./assets/_slug_[^"]*\.css"|href="/assets/_slug_.F5P_0dVk.css"|g' "$file"
             
-            # Add a second CSS link if not already present
-            if ! grep -q "DVKkdtwo.css" "$file"; then
-              sed -i 's|href="/assets/_slug_.F5P_0dVk.css"|href="/assets/_slug_.F5P_0dVk.css"\n    <link rel="stylesheet" href="/assets/_slug_.DVKkdtwo.css"|g' "$file"
-            fi
+            # First, remove any existing CSS links to prevent duplicates
+            sed -i '/<link rel="stylesheet" href="[^"]*\.css">/d' "$file"
+            
+            # Then add both CSS files with absolute paths in the head section
+            sed -i 's|</head>|<link rel="stylesheet" href="/assets/_slug_.F5P_0dVk.css">\n    <link rel="stylesheet" href="/assets/_slug_.DVKkdtwo.css">\n  </head>|g' "$file"
           done
           
           # Debug info
@@ -87,10 +82,24 @@ jobs:
           touch dist/.nojekyll
           echo "Added .nojekyll file to disable Jekyll processing"
           
-      - name: Copy CNAME file
+      - name: Copy CNAME file and create image compatibility links
         run: |
           echo "craiggoble.com" > dist/CNAME
           echo "Added CNAME file for custom domain"
+          
+          # Create compatibility directories for old image paths
+          mkdir -p dist/pages/cgoble/portfolio/pictures
+          
+          # Copy images from their new locations to support old references
+          if [ -f "public/images/blog/nanoleaf/nana_leaf_circuit.png" ]; then
+            cp public/images/blog/nanoleaf/nana_leaf_circuit.png dist/pages/cgoble/portfolio/pictures/
+            echo "Copied nanoleaf circuit image for compatibility"
+          fi
+          
+          if [ -f "public/images/blog/nanoleaf/nano_leaf_finial.jpg" ]; then
+            cp public/images/blog/nanoleaf/nano_leaf_finial.jpg dist/pages/cgoble/portfolio/pictures/
+            echo "Copied nanoleaf finial image for compatibility"
+          fi
           
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4

@@ -21,6 +21,6 @@ The code mostly uses the FastLED library setting up so the number of LEDS per bo
 - logic shifter
 
 ### Picturs
-<img src="/images/blog/your-post-slug/nana_leaf_circuit.png" alt="nano leaf circuit" width="400" />
-<img src="/images/blog/your-post-slug/nano_leaf_finial.jpg" alt="nano leaf finial" width="400" />
+<img src="/images/blog/nanoleaf/nana_leaf_circuit.png" alt="nano leaf circuit" width="400" />
+<img src="/images/blog/nanoleaf/nano_leaf_finial.jpg" alt="nano leaf finial" width="400" />
 
