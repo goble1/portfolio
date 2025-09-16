@@ -94,24 +94,54 @@ jobs:
           touch dist/.nojekyll
           echo "Added .nojekyll file to disable Jekyll processing"
           
-      - name: Copy CNAME file and create image compatibility links
+      - name: Copy CNAME file and ensure blog images are copied
         run: |
           echo "craiggoble.com" > dist/CNAME
           echo "Added CNAME file for custom domain"
           
-          # Create compatibility directories for old image paths
-          mkdir -p dist/pages/cgoble/portfolio/pictures
-          
-          # Copy images from their new locations to support old references
-          if [ -f "public/images/blog/nanoleaf/nana_leaf_circuit.png" ]; then
-            cp public/images/blog/nanoleaf/nana_leaf_circuit.png dist/pages/cgoble/portfolio/pictures/
-            echo "Copied nanoleaf circuit image for compatibility"
+          # Copy root level images for blog posts (simplified approach)
+          if [ -f "public/nana_leaf_circuit.png" ]; then
+            cp public/nana_leaf_circuit.png dist/
+            echo "Copied nanoleaf circuit image to dist root"
           fi
           
-          if [ -f "public/images/blog/nanoleaf/nano_leaf_finial.jpg" ]; then
-            cp public/images/blog/nanoleaf/nano_leaf_finial.jpg dist/pages/cgoble/portfolio/pictures/
-            echo "Copied nanoleaf finial image for compatibility"
+          if [ -f "public/nano_leaf_finial.jpg" ]; then
+            cp public/nano_leaf_finial.jpg dist/
+            echo "Copied nanoleaf finial image to dist root"
           fi
+          
+          if [ -f "public/garage_door_opener.jpg" ]; then
+            cp public/garage_door_opener.jpg dist/
+            echo "Copied garage door opener image to dist root"
+          fi
+          
+          # Also copy images to blog post directories for direct navigation
+          for POST_DIR in dist/blog/*/; do
+            if [ -d "$POST_DIR" ]; then
+              POST_NAME=$(basename "$POST_DIR")
+              echo "Copying images for post: $POST_NAME"
+              
+              # For nanoleaf post
+              if [[ "$POST_NAME" == "Fast LED nano leaf" ]]; then
+                cp public/nana_leaf_circuit.png "$POST_DIR/"
+                cp public/nano_leaf_finial.jpg "$POST_DIR/"
+                echo "Copied nanoleaf images to post directory"
+              fi
+              
+              # For garage door post
+              if [[ "$POST_NAME" == "garage door opener" ]]; then
+                cp public/garage_door_opener.jpg "$POST_DIR/"
+                echo "Copied garage door image to post directory"
+              fi
+            fi
+          done
+          
+          # List copied images for verification
+          echo "Images in dist root:"
+          ls -la dist/*.png dist/*.jpg 2>/dev/null || echo "No images found in dist root"
+          
+          echo "Images in blog directories:"
+          find dist/blog -name "*.png" -o -name "*.jpg" | sort || echo "No images found in blog directories"
           
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
