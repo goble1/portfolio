@@ -2,6 +2,8 @@ let balls;
 const radius = 15;
 const numBalls = 15;
 const colors = ['#FF5E5B', '#D8D8D8', '#FFFFEA', '#00CECB', '#FFED66'];
+const gravity = 0.2;
+let gravityEnabled = true;
 
 function setup() {
   createCanvas(600, 400);
@@ -41,11 +43,23 @@ function setup() {
 function draw() {
   background(40);
   
+  // Display status text
+  fill(255);
+  noStroke();
+  textSize(14);
+  textAlign(LEFT, TOP);
+  text(`Gravity: ${gravityEnabled ? 'ON' : 'OFF'} (press 'g' to toggle)`, 10, 10);
+  
   // Handle collisions
   checkCollisions();
   
   // Update and draw balls
   for (let b of balls) {
+    // Apply gravity if enabled
+    if (gravityEnabled) {
+      b.dy += gravity;
+    }
+    
     // Update position
     b.x += b.dx;
     b.y += b.dy;
@@ -72,6 +86,20 @@ function draw() {
     fill(b.color);
     noStroke();
     ellipse(b.x, b.y, b.radius * 2);
+  }
+}
+
+function keyPressed() {
+  // Toggle gravity when 'g' key is pressed
+  if (key === 'g' || key === 'G') {
+    gravityEnabled = !gravityEnabled;
+    
+    // If gravity is turned off, reduce vertical velocity to make it more obvious
+    if (!gravityEnabled) {
+      for (let b of balls) {
+        b.dy *= 0.5;
+      }
+    }
   }
 }
 
@@ -102,7 +130,7 @@ function checkCollisions() {
         let velocityAlongNormal = dvx * nx + dvy * ny;
         
         // Don't resolve if velocities are separating
-        if (velocityAlongNormal > 0) return;
+        if (velocityAlongNormal > 0) continue;
         
         // Calculate impulse scalar
         let restitution = 0.9; // Coefficient of restitution (bounciness)
