@@ -1,8 +1,8 @@
 ---
-title: "Lessons learned on linkedin profiles and resums"
+title: "Lessons learned on linkedin profiles and resumes"
 description: "My opinion on resumes and linkedin"
 pubDate: "2025-03-01"
-slug: "Lessons learned on linkedin profiles and resums"
+slug: "Lessons learned on linkedin profiles and resumes"
 ---
 
 # Lessons Learned on LinkedIn Profiles and Resumes  

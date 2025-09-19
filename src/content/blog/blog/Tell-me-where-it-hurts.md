@@ -12,7 +12,7 @@ One of my favorite books is *Tell Me Where It Hurts* by Dr. Nick Trout, a veteri
 I read it some time ago, but it came back to the front of my mind while debugging a memory leak. Being a Site Reliability Engineer (SRE) is a lot like being a veterinarian. My “patients” — the systems and applications I care for — don’t talk either. They don’t say, “I’m feeling slow today” or “my database hurts.” Instead, they show symptoms: rising error rates, latency spikes, memory leaks, or sudden crashes. It’s my job to interpret those signals, diagnose the cause, and restore health.  
 
 ## The Family Doctor  
-Most days, I’m like a family doctor checking up on healthy patients. I’m monitoring golden signals: latency, uptime, and resource use. I look for security issues, open incidents, and early warning signs. Just like a doctor looks at diet and lifestyle, I review scaling strategies, redundancy, and data consumption patterns.  
+Most days, I’m like a family doctor checking up on healthy patients. I’m monitoring golden signals: latency, uptime, and resource use. I look for security issues, open incidents, and early warning signs. Just like a doctor looks at diet and lifestyle, I review scaling strategies, redundancy, and data consumption patterns; as a form of preventative car.  
 
 My service level indicators (SLIs) are the equivalent of “I’m not sleeping well” or “I’ve been gaining weight.” They aren’t emergencies — but they tell me whether the system is thriving or drifting toward trouble.  
 
