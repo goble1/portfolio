@@ -5,7 +5,7 @@ export default defineConfig({
   site: 'https://craiggoble.com',
   base: '/',
   output: 'static',
-  outDir: './dist',  // Standard Astro output directory
+  outDir: './docs',  // GitHub Pages output directory
   // Simplified build config to avoid path issues
   integrations: [tailwind()],
   markdown: {

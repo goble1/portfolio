@@ -7,7 +7,6 @@ _site
 *.gem
 
 # Astro build output
-docs/
 dist/
 node_modules/
 .astro

@@ -20,10 +20,14 @@
     <script>
       const urlParams = new URLSearchParams(window.location.search);
       const sketch = urlParams.get("sketch");
+
       if (sketch) {
+        // Use an absolute path for sketches
         const script = document.createElement("script");
         script.src = `/sketches/${sketch}.js`;
         document.body.appendChild(script);
+        
+        console.log(`Loading sketch: /sketches/${sketch}.js`);
       }
     </script>
   </body>
